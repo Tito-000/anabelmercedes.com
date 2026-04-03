@@ -1108,11 +1108,15 @@ ul { list-style: none; }
 .optin__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
   min-height: 600px;
 }
+/* Desktop: foto ocupa toda la columna izquierda, header+body la derecha */
 .optin__photo {
   position: relative;
   overflow: hidden;
+  grid-column: 1;
+  grid-row: 1 / 3;
 }
 .optin__photo img {
   width: 100%;
@@ -1126,11 +1130,19 @@ ul { list-style: none; }
 .optin__photo:hover img {
   filter: grayscale(60%);
 }
-.optin__content {
+.optin__header {
+  grid-column: 2;
+  grid-row: 1;
+  padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 80px) 0;
+  background: var(--cream-deep);
+}
+.optin__body {
+  grid-column: 2;
+  grid-row: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 80px);
+  justify-content: flex-start;
+  padding: 0 clamp(32px, 5vw, 80px) clamp(48px, 6vw, 80px);
   background: var(--cream-deep);
 }
 .optin__signature {
@@ -1471,17 +1483,24 @@ ul { list-style: none; }
   }
 
   /* — OPTIN — */
-  .optin__inner { grid-template-columns: 1fr; }
-  .optin__content {
-    padding: 48px clamp(24px, 6vw, 48px) 32px;
-    align-items: center;
+  .optin__inner {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .optin__header {
+    grid-column: 1;
+    grid-row: 1;
+    order: 1;
+    padding: 48px clamp(24px, 6vw, 48px) 24px;
     text-align: center;
-    order: -1; /* headline arriba de la foto */
   }
   .optin__photo {
+    grid-column: 1;
+    grid-row: 2;
+    order: 2;
     min-height: auto;
     max-height: none;
-    padding: 0 32px 40px;
+    padding: 0 32px 32px;
     background: var(--cream-deep);
   }
   .optin__photo img {
@@ -1491,6 +1510,14 @@ ul { list-style: none; }
     object-fit: cover;
     border-radius: 12px;
     box-shadow: 6px 6px 0 var(--navy);
+  }
+  .optin__body {
+    grid-column: 1;
+    grid-row: 3;
+    order: 3;
+    padding: 32px clamp(24px, 6vw, 48px) 56px;
+    align-items: center;
+    text-align: center;
   }
   .optin__signature { text-align: center; }
   .optin__headline { text-align: center; }
@@ -1503,7 +1530,7 @@ ul { list-style: none; }
     margin-left: auto;
     margin-right: auto;
   }
-  .optin__content .hero__cta { margin-left: auto; margin-right: auto; }
+  .optin__body .hero__cta { margin-left: auto; margin-right: auto; }
 }
 
 /* ====== LARGE PHONE — 600px ====== */
@@ -1684,10 +1711,13 @@ ul { list-style: none; }
 
   /* — OPTIN — */
   .optin__photo {
-    padding: 0 24px 36px;
+    padding: 0 24px 28px;
   }
-  .optin__content {
-    padding: 40px 24px 28px;
+  .optin__header {
+    padding: 40px 24px 20px;
+  }
+  .optin__body {
+    padding: 24px 24px 48px;
   }
   .optin__signature {
     font-size: clamp(2.6rem, 2rem + 3vw, 3.8rem);
@@ -1827,10 +1857,13 @@ ul { list-style: none; }
 
   /* — OPTIN — */
   .optin__photo {
-    padding: 0 20px 32px;
+    padding: 0 20px 24px;
   }
-  .optin__content {
-    padding: 32px 20px 24px;
+  .optin__header {
+    padding: 32px 20px 16px;
+  }
+  .optin__body {
+    padding: 20px 20px 44px;
   }
   .optin__signature {
     font-size: clamp(2.2rem, 1.8rem + 2vw, 3.2rem);
@@ -2188,15 +2221,17 @@ ul { list-style: none; }
 <!-- ============ CTA FINAL — estilo Elise Darma ============ -->
 <section class="optin" id="cta">
   <div class="optin__inner">
-    <div class="optin__photo fade-up">
-      <img src="anabel-cta.jpg" alt="Anabel Mercedes">
-    </div>
-    <div class="optin__content fade-up">
+    <div class="optin__header fade-up">
       <div class="optin__signature">El momento es ahora.<br>La decisión es tuya.</div>
       <div class="optin__headline">
         No te contacté. No te mandé un mensaje frío.<br>
         Tú llegaste aquí sola.
       </div>
+    </div>
+    <div class="optin__photo fade-up">
+      <img src="anabel-cta.jpg" alt="Anabel Mercedes">
+    </div>
+    <div class="optin__body fade-up">
       <p class="optin__text">
         Ya conoces mi historia. Sabes que era la más tímida del salón y que hoy lidero a más de 5,000 personas. <strong>No te voy a pedir que creas en el modelo — te voy a mostrar cómo funciona.</strong> Pero solo si tú das el paso.
       </p>
@@ -2211,6 +2246,7 @@ ul { list-style: none; }
     </div>
   </div>
 </section>
+
 
 <!-- ============ FOOTER — estilo Elise Darma ============ -->
 <footer class="footer">
