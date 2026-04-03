@@ -1472,14 +1472,25 @@ ul { list-style: none; }
 
   /* — OPTIN — */
   .optin__inner { grid-template-columns: 1fr; }
-  .optin__photo {
-    min-height: 55vw;
-    max-height: 450px;
-  }
   .optin__content {
-    padding: 48px clamp(24px, 6vw, 48px) 56px;
+    padding: 48px clamp(24px, 6vw, 48px) 32px;
     align-items: center;
     text-align: center;
+    order: -1; /* headline arriba de la foto */
+  }
+  .optin__photo {
+    min-height: auto;
+    max-height: none;
+    padding: 0 32px 40px;
+    background: var(--cream-deep);
+  }
+  .optin__photo img {
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 6px 6px 0 var(--navy);
   }
   .optin__signature { text-align: center; }
   .optin__headline { text-align: center; }
@@ -1673,11 +1684,10 @@ ul { list-style: none; }
 
   /* — OPTIN — */
   .optin__photo {
-    min-height: 70vw;
-    max-height: 420px;
+    padding: 0 24px 36px;
   }
   .optin__content {
-    padding: 40px 24px 56px;
+    padding: 40px 24px 28px;
   }
   .optin__signature {
     font-size: clamp(2.6rem, 2rem + 3vw, 3.8rem);
@@ -1816,8 +1826,11 @@ ul { list-style: none; }
   .instagram__cta { padding: 24px 20px 0; }
 
   /* — OPTIN — */
+  .optin__photo {
+    padding: 0 20px 32px;
+  }
   .optin__content {
-    padding: 32px 20px 44px;
+    padding: 32px 20px 24px;
   }
   .optin__signature {
     font-size: clamp(2.2rem, 1.8rem + 2vw, 3.2rem);
