@@ -1026,6 +1026,37 @@ ul { list-style: none; }
   border-left: 3px solid var(--sage);
   padding-left: 20px;
 }
+/* Club collage — 3 fotos estilo moodboard debajo del grid principal */
+.club__collage {
+  display: flex;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px clamp(24px, 5vw, 80px) 0;
+}
+.club__collage-card {
+  flex: 1;
+  overflow: hidden;
+  border: 2px solid var(--navy);
+  box-shadow: 4px 4px 0 var(--navy);
+  background: var(--white);
+  padding: 5px;
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+}
+.club__collage-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 4/3;
+}
+.club__collage-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 8px 8px 0 var(--navy);
+}
+.club__collage-card--1 { transform: rotate(-1.5deg); }
+.club__collage-card--2 { transform: rotate(1deg); }
+.club__collage-card--3 { transform: rotate(-0.8deg); }
 /* Club responsive — see unified block at bottom */
 
 /* ====== INSTAGRAM ====== */
@@ -1489,6 +1520,7 @@ ul { list-style: none; }
     margin-right: auto;
   }
   .club__content .hero__cta { margin-left: auto; margin-right: auto; }
+  .club__collage { padding: 32px 24px 0; gap: 12px; }
 
   /* — INSTAGRAM — */
   .instagram__grid {
@@ -1703,6 +1735,8 @@ ul { list-style: none; }
     margin-bottom: 28px;
   }
   .club__content .hero__cta { }
+  .club__collage { padding: 28px 24px 0; gap: 10px; }
+  .club__collage-card { padding: 4px; box-shadow: 3px 3px 0 var(--navy); }
 
   /* — INSTAGRAM — */
   .instagram { padding: var(--section-py) 0; }
@@ -1854,6 +1888,8 @@ ul { list-style: none; }
     font-size: clamp(2.8rem, 2rem + 3vw, 4rem);
   }
   .club__desc { font-size: 0.9rem; }
+  .club__collage { padding: 24px 20px 0; gap: 8px; }
+  .club__collage-card { padding: 3px; border-width: 1.5px; box-shadow: 2px 2px 0 var(--navy); }
 
   /* — INSTAGRAM — */
   .instagram__grid {
@@ -2185,6 +2221,18 @@ ul { list-style: none; }
         Quiero ser parte
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
+    </div>
+  </div>
+  <!-- Collage de fotos del equipo -->
+  <div class="club__collage fade-up">
+    <div class="club__collage-card club__collage-card--1">
+      <img src="equipo-crucero.jpg" alt="Equipo en crucero">
+    </div>
+    <div class="club__collage-card club__collage-card--2">
+      <img src="equipo-piscina.jpg" alt="Equipo en pool party">
+    </div>
+    <div class="club__collage-card club__collage-card--3">
+      <img src="equipo-evento.jpg" alt="Equipo en evento">
     </div>
   </div>
 </section>
