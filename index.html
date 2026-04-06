@@ -941,15 +941,16 @@ ul { list-style: none; }
 .club__photo {
   position: relative;
   background: var(--cream-warm);
-  padding: 24px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .club__moodboard {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-rows: auto auto;
+  gap: 8px;
   width: 100%;
 }
 .club__mood-card {
@@ -957,7 +958,7 @@ ul { list-style: none; }
   border: 2px solid var(--navy);
   box-shadow: 4px 4px 0 var(--navy);
   background: var(--white);
-  padding: 5px;
+  padding: 4px;
   transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
 }
 .club__mood-card img {
@@ -965,47 +966,48 @@ ul { list-style: none; }
   height: 100%;
   object-fit: cover;
   display: block;
-  aspect-ratio: 4/3;
 }
 .club__mood-card:hover {
   transform: scale(1.03) translateY(-4px) !important;
   box-shadow: 8px 8px 0 var(--navy);
   z-index: 10;
 }
-/* Slight rotations for collage feel */
-.club__mood-card--1 { transform: rotate(-1.5deg); }
-.club__mood-card--2 { transform: rotate(1.8deg); }
-.club__mood-card--3 { transform: rotate(1deg); }
-.club__mood-card--4 { transform: rotate(-1.2deg); }
-/* Sello Club sobre la foto */
+/* Card 1: equipo grande — tall left */
+.club__mood-card--1 {
+  grid-row: 1 / 3;
+  transform: rotate(-1.2deg);
+}
+.club__mood-card--1 img { aspect-ratio: 2/3; }
+/* Card 2: crucero — top right */
+.club__mood-card--2 { transform: rotate(1.5deg); }
+.club__mood-card--2 img { aspect-ratio: 4/3; }
+/* Card 3: piscina — bottom right top */
+.club__mood-card--3 { transform: rotate(-0.8deg); }
+.club__mood-card--3 img { aspect-ratio: 4/3; }
+/* Card 4: evento — hidden on desktop grid, shown after */
+.club__mood-card--4 {
+  grid-column: 1 / -1;
+  transform: rotate(0.5deg);
+}
+.club__mood-card--4 img { aspect-ratio: 3/1; }
+/* Logo Club de la Libertad */
 .club__sello {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid var(--navy);
-  box-shadow: 4px 4px 0 var(--navy);
+  bottom: 28px;
+  right: 28px;
+  width: 160px;
   z-index: 10;
-  background: #F5941E;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
   transition: transform 0.4s var(--ease);
+  filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.15));
 }
 .club__sello:hover {
-  transform: rotate(-8deg) scale(1.08);
+  transform: scale(1.06);
 }
 .club__sello img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
   display: block;
 }
-/* Club sello responsive — see unified block at bottom */
 /* Contenido derecha */
 .club__content {
   padding: clamp(48px, 6vw, 80px) clamp(32px, 5vw, 80px);
@@ -1708,11 +1710,9 @@ ul { list-style: none; }
     padding: 16px;
   }
   .club__sello {
-    width: 80px;
-    height: 80px;
-    top: 12px;
-    right: 12px;
-    padding: 6px;
+    width: 120px;
+    bottom: 16px;
+    right: 16px;
   }
   .club__content {
     padding: 40px 24px 56px;
@@ -1872,13 +1872,9 @@ ul { list-style: none; }
     padding: 32px 20px 44px;
   }
   .club__sello {
-    width: 65px;
-    height: 65px;
-    top: 10px;
-    right: 10px;
-    padding: 5px;
-    border-width: 2px;
-    box-shadow: 3px 3px 0 var(--navy);
+    width: 100px;
+    bottom: 12px;
+    right: 12px;
   }
   .club__hero-num {
     font-size: clamp(2.8rem, 2rem + 3vw, 4rem);
@@ -2217,7 +2213,7 @@ ul { list-style: none; }
         </div>
       </div>
       <div class="club__sello">
-        <img src="club-libertad-sello.jpg" alt="Club de la Libertad">
+        <img src="club-libertad-logo.png" alt="El Club de la Libertad">
       </div>
     </div>
     <!-- Body: stats + copy + CTA (order 3 on mobile) -->
