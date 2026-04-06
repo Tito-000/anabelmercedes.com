@@ -990,22 +990,32 @@ ul { list-style: none; }
   transform: rotate(0.5deg);
 }
 .club__mood-card--4 img { aspect-ratio: 3/1; }
-/* Logo Club de la Libertad */
+/* Sello Club de la Libertad — circular con fondo blanco */
 .club__sello {
   position: absolute;
-  bottom: 28px;
-  right: 28px;
-  width: 160px;
+  top: 16px;
+  right: 16px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--white);
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
   z-index: 10;
+  background: #F5941E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   transition: transform 0.4s var(--ease);
-  filter: drop-shadow(2px 2px 6px rgba(0,0,0,0.15));
 }
 .club__sello:hover {
-  transform: scale(1.06);
+  transform: rotate(-5deg) scale(1.06);
 }
 .club__sello img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 /* Contenido derecha */
@@ -1710,9 +1720,11 @@ ul { list-style: none; }
     padding: 16px;
   }
   .club__sello {
-    width: 120px;
-    bottom: 16px;
-    right: 16px;
+    width: 110px;
+    height: 110px;
+    top: 12px;
+    right: 12px;
+    border-width: 4px;
   }
   .club__content {
     padding: 40px 24px 56px;
@@ -1872,9 +1884,11 @@ ul { list-style: none; }
     padding: 32px 20px 44px;
   }
   .club__sello {
-    width: 100px;
-    bottom: 12px;
-    right: 12px;
+    width: 90px;
+    height: 90px;
+    top: 8px;
+    right: 8px;
+    border-width: 3px;
   }
   .club__hero-num {
     font-size: clamp(2.8rem, 2rem + 3vw, 4rem);
@@ -2213,7 +2227,7 @@ ul { list-style: none; }
         </div>
       </div>
       <div class="club__sello">
-        <img src="club-libertad-logo.png" alt="El Club de la Libertad">
+        <img src="club-libertad-sello.jpg" alt="Club de la Libertad">
       </div>
     </div>
     <!-- Body: stats + copy + CTA (order 3 on mobile) -->
