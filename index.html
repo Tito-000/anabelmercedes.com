@@ -752,6 +752,28 @@ ul { list-style: none; }
   text-transform: uppercase;
   font-weight: 600;
 }
+.immunotec__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 36px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.immunotec__benefits li {
+  padding: 18px 20px;
+  background: var(--white);
+  border: 2px solid var(--navy);
+  box-shadow: 3px 3px 0 var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.3px;
+}
+.immunotec__benefits li:last-child {
+  grid-column: 1 / -1;
+}
 .immunotec__visual {
   position: relative;
   display: flex;
@@ -2170,16 +2192,13 @@ ul { list-style: none; }
       <p>Más de 45 años de ciencia, miles de testimonios y 79 patentes respaldando su producto estrella, Immunocal. No es moda — es ciencia que la gente usa y recomienda.</p>
       <p>Hoy construyo ingresos recomendando algo en lo que creo… y desarrollando un equipo que también crece conmigo.</p>
       <p>Sin jefe, sin local… solo yo, un sistema y las personas correctas. 🚀</p>
-      <div class="immunotec__stats">
-        <div class="immunotec__stat">
-          <div class="immunotec__stat-num">45+</div>
-          <div class="immunotec__stat-label">Años en el mercado</div>
-        </div>
-        <div class="immunotec__stat">
-          <div class="immunotec__stat-num">79</div>
-          <div class="immunotec__stat-label">Patentes registradas</div>
-        </div>
-      </div>
+      <ul class="immunotec__benefits">
+        <li>7 formas de generar ingresos</li>
+        <li>+10 productos</li>
+        <li>Viajes de incentivos</li>
+        <li>Ingresos de equipo</li>
+        <li>Bonos por ascenso</li>
+      </ul>
       <a href="https://wa.me/18292812978?text=Hola%20Anabel%2C%20vi%20tu%20p%C3%A1gina%20y%20me%20interesa%20saber%20m%C3%A1s%20sobre%20tu%20proyecto.%20%C2%BFC%C3%B3mo%20funciona%3F" target="_blank" class="hero__cta" style="opacity:1;animation:none;">
         Conoce la oportunidad
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
