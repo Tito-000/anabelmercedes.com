@@ -939,7 +939,6 @@ ul { list-style: none; }
 }
 /* Foto moodboard — columna izquierda */
 .club__photo {
-  overflow: hidden;
   position: relative;
   background: var(--cream-warm);
   padding: 24px;
@@ -948,66 +947,36 @@ ul { list-style: none; }
   justify-content: center;
 }
 .club__moodboard {
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   width: 100%;
-  aspect-ratio: 1/1;
 }
 .club__mood-card {
-  position: absolute;
   overflow: hidden;
   border: 2px solid var(--navy);
   box-shadow: 4px 4px 0 var(--navy);
   background: var(--white);
   padding: 5px;
-  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease), z-index 0s;
+  transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
 }
 .club__mood-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  aspect-ratio: 4/3;
 }
 .club__mood-card:hover {
-  transform: rotate(0deg) scale(1.05) translateY(-6px) !important;
+  transform: scale(1.03) translateY(-4px) !important;
   box-shadow: 8px 8px 0 var(--navy);
   z-index: 10;
 }
-/* Card 1: equipo grande — top-left */
-.club__mood-card--1 {
-  width: 58%;
-  aspect-ratio: 4/3;
-  top: 0;
-  left: 0;
-  transform: rotate(-2deg);
-  z-index: 3;
-}
-/* Card 2: crucero — top-right */
-.club__mood-card--2 {
-  width: 54%;
-  aspect-ratio: 4/3;
-  top: 5%;
-  right: 0;
-  transform: rotate(2.5deg);
-  z-index: 4;
-}
-/* Card 3: piscina — bottom-left, overlaps row above */
-.club__mood-card--3 {
-  width: 55%;
-  aspect-ratio: 4/3;
-  top: 48%;
-  left: 0;
-  transform: rotate(1.5deg);
-  z-index: 2;
-}
-/* Card 4: evento — bottom-right, overlaps row above */
-.club__mood-card--4 {
-  width: 52%;
-  aspect-ratio: 4/3;
-  top: 52%;
-  right: 0;
-  transform: rotate(-1.8deg);
-  z-index: 5;
-}
+/* Slight rotations for collage feel */
+.club__mood-card--1 { transform: rotate(-1.5deg); }
+.club__mood-card--2 { transform: rotate(1.8deg); }
+.club__mood-card--3 { transform: rotate(1deg); }
+.club__mood-card--4 { transform: rotate(-1.2deg); }
 /* Sello Club sobre la foto */
 .club__sello {
   position: absolute;
