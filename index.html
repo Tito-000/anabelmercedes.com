@@ -990,19 +990,23 @@ ul { list-style: none; }
   transform: rotate(0.5deg);
 }
 .club__mood-card--4 img { aspect-ratio: 3/1; }
-/* Sello Club de la Libertad — mismo estilo que Immunotec */
+/* Sello Club de la Libertad — circular, fondo blanco, logo vertical */
 .club__sello {
   position: absolute;
-  top: -20px;
-  right: -14px;
-  width: 110px;
-  height: 110px;
+  top: -24px;
+  right: -16px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--navy);
   box-shadow: 3px 3px 0 var(--navy);
-  background: #F5941E;
+  background: var(--white);
   z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
   transition: transform 0.4s var(--ease);
 }
 .club__sello:hover {
@@ -1010,8 +1014,8 @@ ul { list-style: none; }
 }
 .club__sello img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   display: block;
 }
 /* Contenido derecha */
@@ -1716,10 +1720,11 @@ ul { list-style: none; }
     padding: 16px;
   }
   .club__sello {
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     top: -16px;
-    right: -10px;
+    right: 4px;
+    padding: 10px;
   }
   .club__content {
     padding: 40px 24px 56px;
@@ -1879,10 +1884,11 @@ ul { list-style: none; }
     padding: 32px 20px 44px;
   }
   .club__sello {
-    width: 75px;
-    height: 75px;
-    top: -12px;
-    right: -8px;
+    width: 85px;
+    height: 85px;
+    top: -10px;
+    right: 4px;
+    padding: 8px;
     border-width: 2.5px;
     box-shadow: 2px 2px 0 var(--navy);
   }
@@ -2223,7 +2229,7 @@ ul { list-style: none; }
         </div>
       </div>
       <div class="club__sello">
-        <img src="club-libertad-sello.jpg" alt="Club de la Libertad">
+        <img src="club-libertad-vertical.png" alt="Club de la Libertad">
       </div>
     </div>
     <!-- Body: stats + copy + CTA (order 3 on mobile) -->
